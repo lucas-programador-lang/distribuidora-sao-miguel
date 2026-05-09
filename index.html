@@ -3,72 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Distribuidora São Miguel | Gás e Água Mineral</title>
+    <title>São Miguel | Distribuidora Ultra</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="background-glow"></div>
+    <div class="glow-container">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+    </div>
 
-    <main class="container">
-        <!-- Header -->
-        <header class="profile-header">
-            <div class="logo-area">
-                <div class="icon-circle">
-                    <i class="fas fa-droplet blue-glow"></i>
-                    <i class="fas fa-fire orange-glow"></i>
-                </div>
-            </div>
-            <h1>Distribuidora <span>São Miguel</span></h1>
-            <p class="tagline">Qualidade e Rapidez que você confia.</p>
+    <main class="app-card">
+        <header class="hero">
+            <div class="badge">🔥 Entrega Ultra Rápida</div>
+            <h1 class="brand-name">São Miguel</h1>
+            <p class="sub-brand">Gás & Água Mineral</p>
         </header>
 
-        <!-- Preços em Destaque -->
-        <section class="price-grid">
-            <div class="price-card">
-                <span class="label">Gás 13kg</span>
-                <h2 class="price">R$ 107,99</h2>
-                <p class="obs">Retirada no Local</p>
+        <section class="pricing-section">
+            <div class="glass-card price-item">
+                <div class="item-info">
+                    <span class="category">Gás de Cozinha 13kg</span>
+                    <h2 class="val">R$ 107,99</h2>
+                </div>
+                <div class="icon-box"><i class="fas fa-fire-alt"></i></div>
             </div>
-            <div class="price-card highlight">
-                <span class="label">Água 20L</span>
-                <h2 class="price">R$ 6,90</h2>
-                <p class="obs">Retirada no Local</p>
+
+            <div class="glass-card price-item featured">
+                <div class="item-info">
+                    <span class="category">Garrafão 20L</span>
+                    <h2 class="val">R$ 6,90</h2>
+                </div>
+                <div class="icon-box"><i class="fas fa-droplet"></i></div>
             </div>
         </section>
 
-        <!-- Links de Ação -->
-        <section class="links-area">
-            <a href="https://wa.me/5569992441223" target="_blank" class="btn-primary">
-                <i class="fab fa-whatsapp"></i> Peça pelo WhatsApp
+        <div class="payment-badges">
+            <span><i class="fas fa-pix"></i> Pix</span>
+            <span><i class="fas fa-credit-card"></i> Cartão</span>
+            <span><i class="fas fa-money-bill-wave"></i> Dinheiro</span>
+        </div>
+
+        <section class="action-grid">
+            <a href="https://wa.me/5569992441223" class="cta-button main">
+                <div class="btn-content">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Pedir Agora</span>
+                </div>
+                <i class="fas fa-arrow-right arrow"></i>
             </a>
 
-            <div class="info-glass">
-                <h3><i class="fas fa-motorcycle"></i> Entrega Rápida</h3>
-                <p>Aceitamos Pix, Dinheiro e Cartão</p>
+            <div class="address-card">
+                <p><i class="fas fa-map-marker-alt"></i> Av. Campos Sales, 4487, Nova Floresta</p>
+                <small>Porto Velho - RO</small>
             </div>
-
-            <a href="https://www.google.com/maps/search/?api=1&query=Av.+Campos+Sales,+4487,+Nova+Floresta" target="_blank" class="btn-outline">
-                <i class="fas fa-location-dot"></i> Av. Campos Sales, 4487 - Nova Floresta
-            </a>
         </section>
 
-        <!-- Rodapé / Horários -->
-        <footer class="footer-info">
-            <div class="schedule">
-                <h4><i class="far fa-clock"></i> Horário de Funcionamento</h4>
-                <div class="time-row">
-                    <span>Segunda a Sexta</span>
-                    <span>07:30 - 18:00</span>
-                </div>
-                <div class="time-row">
-                    <span>Sábado</span>
-                    <span>08:00 - 13:00</span>
-                </div>
-            </div>
-            <p class="dev-tag">© 2026 Distribuidora São Miguel</p>
+        <footer class="hours-card">
+            <h3><i class="far fa-clock"></i> Horário de Atendimento</h3>
+            <div class="row"><span>Segunda - Sexta</span> <strong>07:30 — 18:00</strong></div>
+            <div class="row"><span>Sábado</span> <strong>08:00 — 13:00</strong></div>
         </footer>
     </main>
 
