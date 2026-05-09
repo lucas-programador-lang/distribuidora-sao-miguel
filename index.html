@@ -3,88 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>São Miguel | Distribuidora de Elite</title>
+    <title>São Miguel | Distribuidora Premium</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Fundo Imersivo -->
-    <div class="luxury-bg">
-        <div class="light-orb orb-1"></div>
-        <div class="light-orb orb-2"></div>
+    <!-- Background Animado de Luxo -->
+    <div class="bg-wrapper">
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
     </div>
 
-    <div class="main-wrapper">
-        <nav class="top-nav">
-            <div class="logo-area">
-                <img src="logo.png" alt="São Miguel" class="brand-logo">
+    <div class="content-reveal">
+        <!-- Navegação Superior -->
+        <nav class="glass-nav">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo São Miguel" class="logo">
             </div>
-            <div class="availability-badge">
-                <span class="pulse-dot"></span>
-                Porto Velho — Nova Floresta
+            <div class="status-indicator">
+                <span class="pulse"></span> Disponível em Porto Velho
             </div>
         </nav>
 
-        <section class="bento-grid">
-            
-            <!-- Hero Card (Destaque Principal) -->
-            <div class="bento-item hero">
-                <span class="upper-title">Premium Service</span>
-                <h1>Distribuidora <br><span class="highlight">São Miguel</span></h1>
-                <p>Gás e Água com a rapidez que só quem é líder na região oferece.</p>
+        <main class="main-container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="badge-premium">Qualidade Superior</div>
+                <h1 class="main-title">São Miguel <span>Distribuidora</span></h1>
+                <p class="description">Gás e Água Mineral com padrão de excelência e entrega ultra rápida na região da Nova Floresta.</p>
                 
-                <div class="price-tags">
-                    <div class="tag">
-                        <i class="fas fa-fire"></i>
-                        <span>Gás 13kg <strong>R$ 107,99</strong></span>
+                <div class="hero-actions">
+                    <a href="https://wa.me/5569992441223" class="btn-ultra">
+                        <i class="fab fa-whatsapp"></i> Peça Agora
+                    </a>
+                </div>
+            </section>
+
+            <!-- Cards Grid -->
+            <section class="premium-grid">
+                <!-- Card Gás -->
+                <div class="card-item entry-1">
+                    <div class="card-inner">
+                        <div class="card-header">
+                            <i class="fas fa-fire-alt fire-icon"></i>
+                            <span>Botija de Gás 13kg</span>
+                        </div>
+                        <div class="card-price">
+                            <small>R$</small> 107,99
+                        </div>
+                        <div class="card-footer">Preço para retirada</div>
                     </div>
-                    <div class="tag">
-                        <i class="fas fa-droplet"></i>
-                        <span>Água 20L <strong>R$ 6,90</strong></span>
+                </div>
+
+                <!-- Card Água -->
+                <div class="card-item entry-2">
+                    <div class="card-inner">
+                        <div class="card-header">
+                            <i class="fas fa-droplet water-icon"></i>
+                            <span>Garrafão de Água 20L</span>
+                        </div>
+                        <div class="card-price">
+                            <small>R$</small> 6,90
+                        </div>
+                        <div class="card-footer">Água Mineral Pura</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- CTA Card (Ação Direta) -->
-            <a href="https://wa.me/5569992441223" target="_blank" class="bento-item cta-card">
-                <div class="cta-inner">
-                    <i class="fab fa-whatsapp"></i>
-                    <h2>Peça Agora</h2>
-                    <p>Atendimento via WhatsApp</p>
+                <!-- Card Localização / Mapa -->
+                <div class="card-item map-card entry-3">
+                    <div class="card-inner">
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.54!2d-63.88219!3d-8.78206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92325ce25c898c0b%3A0xc479262f3f7215f7!2sAv.%20Campos%20Sales%2C%204487!5e0!3m2!1spt-BR!2sbr!4v1700000000" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div class="map-text">
+                            <h4>Nossa Localização</h4>
+                            <p>Av. Campos Sales, 4487, Nova Floresta</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="hover-glow"></div>
-            </a>
 
-            <!-- Map Card (Localização) -->
-            <div class="bento-item map-card">
-                <div class="map-overlay">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Toque para ver a rota</span>
+                <!-- Card Horários -->
+                <div class="card-item entry-4">
+                    <div class="card-inner info-card">
+                        <h3><i class="far fa-clock"></i> Funcionamento</h3>
+                        <div class="time-list">
+                            <div class="time-row"><span>Seg — Sex</span> <strong>07:30 - 18h</strong></div>
+                            <div class="time-row"><span>Sábado</span> <strong>08h - 13h</strong></div>
+                        </div>
+                        <div class="pay-icons">
+                            <i class="fas fa-pix"></i>
+                            <i class="fas fa-credit-card"></i>
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                    </div>
                 </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.5401340156947!2d-63.8821946!3d-8.7820692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92325ce25c898c0b%3A0xc479262f3f7215f7!2sAv.%20Campos%20Sales%2C%204487%20-%20Nova%20Floresta%2C%20Porto%20Velho!5e0!3m2!1spt-BR!2sbr!4v1715286000000" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-
-            <!-- Info Card (Horários e Pagamento) -->
-            <div class="bento-item info-card">
-                <h3>Horários</h3>
-                <div class="hours">
-                    <div class="h-item"><span>Seg - Sex</span> <strong>07:30 - 18h</strong></div>
-                    <div class="h-item"><span>Sábados</span> <strong>08h - 13h</strong></div>
-                </div>
-                <div class="payments">
-                    <i class="fas fa-pix"></i>
-                    <i class="fas fa-credit-card"></i>
-                    <i class="fas fa-wallet"></i>
-                </div>
-            </div>
-
-        </section>
-        
-        <footer class="minimal-footer">
-            <p>Av. Campos Sales, 4487 — Qualidade São Miguel</p>
-        </footer>
+            </section>
+        </main>
     </div>
 
 </body>
