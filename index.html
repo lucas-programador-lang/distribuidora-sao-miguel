@@ -4,9 +4,320 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>São Miguel | Distribuidora Premium</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variáveis de Cores Premium */
+        :root {
+            --bg-color: #0b0f19;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent-gas: #ff7b00;
+            --accent-water: #00d2ff;
+            --whatsapp: #25d366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Fundo Animado Premium */
+        .bg-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: #0b0f19;
+        }
+
+        .gradient-sphere {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.5;
+            animation: float 10s infinite alternate ease-in-out;
+        }
+
+        .sphere-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-gas);
+            top: -100px;
+            left: -100px;
+        }
+
+        .sphere-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--accent-water);
+            bottom: -150px;
+            right: -100px;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, 50px) scale(1.1); }
+        }
+
+        /* Conteúdo Principal */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin-top: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .logo-box {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .logo-img {
+            max-width: 70%;
+            height: auto;
+        }
+
+        .reveal-text {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .reveal-text span {
+            background: linear-gradient(90deg, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* Cards de Produtos */
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            transition: height 0.3s ease;
+        }
+
+        .product-card.gas::before { background: linear-gradient(90deg, var(--accent-gas), #ffaa00); }
+        .product-card.water::before { background: linear-gradient(90deg, var(--accent-water), #0077ff); }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        .icon-product {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .gas .icon-product { color: var(--accent-gas); }
+        .water .icon-product { color: var(--accent-water); }
+
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .product-card small {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Seção Mapa e Info */
+        .map-section {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 30px;
+            backdrop-filter: blur(16px);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .map-card {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .map-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .info-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .info-block i {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .info-block h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .info-block p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .map-frame {
+            flex: 1;
+            min-width: 300px;
+            min-height: 350px;
+        }
+
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(100%) invert(90%) contrast(1.2); /* Mapa estilo Dark Mode */
+        }
+
+        /* Botão WhatsApp */
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--whatsapp);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-fixed i {
+            font-size: 1.5rem;
+        }
+
+        .whatsapp-fixed:hover {
+            transform: scale(1.05) translateY(-5px);
+            background: #1ebc59;
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+            animation: none;
+        }
+
+        /* Animações */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .reveal-text { font-size: 2.5rem; }
+            .map-card { flex-direction: column; }
+            .map-frame { min-height: 250px; }
+            .whatsapp-fixed {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -18,9 +329,9 @@
     <div class="main-content">
         <header class="hero-section">
             <div class="logo-box">
-                <img src="logo.png" alt="São Miguel" class="logo-img">
+                <i class="fas fa-crown" style="font-size: 2.5rem; color: #fff;"></i>
             </div>
-            <h1 class="reveal-text">São Miguel <span>Distribuidora</span></h1>
+            <h1 class="reveal-text">São Miguel <br><span>Distribuidora</span></h1>
             <p class="subtitle">Excelência em Gás e Água Mineral</p>
         </header>
 
@@ -51,20 +362,20 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Visite-nos</h4>
-                            <p>Av. Campos Sales, 4487, Nova Floresta</p>
+                            <p>Av. Campos Sales, 4487<br>Nova Floresta</p>
                         </div>
                     </div>
                     <div class="info-block">
                         <i class="far fa-clock"></i>
                         <div>
-                            <h4>Horário</h4>
-                            <p>Seg-Sex: 07:30-18h | Sáb: 08-13h</p>
+                            <h4>Horário de Funcionamento</h4>
+                            <p>Segunda a Sexta: 07:30h - 18:00h<br>Sábados: 08:00h - 13:00h</p>
                         </div>
                     </div>
                 </div>
                 <div class="map-frame">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.8837136005!2d-63.8821!3d-8.7774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92325ce68571853d%3A0x63363383838383!2sAv.%20Campos%20Sales%2C%204487%20-%20Nova%20Floresta%2C%20Porto%20Velho%20-%20RO%2C%2076807-162!5e0!3m2!1spt-BR!2sbr!4v1715000000000!5m2!1spt-BR!2sbr" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900!2d-63.8!3d-8.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1spt-BR!2sbr!4v1" 
                         allowfullscreen="" 
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
@@ -73,7 +384,7 @@
             </div>
         </section>
 
-        <a href="https://wa.me/5569992441223" class="whatsapp-fixed">
+        <a href="https://wa.me/5569992441223" class="whatsapp-fixed" target="_blank">
             <i class="fab fa-whatsapp"></i> Peça pelo WhatsApp
         </a>
     </div>
